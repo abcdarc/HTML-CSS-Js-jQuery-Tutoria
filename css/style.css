@@ -1,0 +1,184 @@
+	/* HTML 樣式設定 */
+	body
+	{
+		background:#000; 
+		color:#ff0;
+		/*body - 有預設內距5px - 可以取消*/
+		margin:0;
+	}
+	
+	body,h1,h2,h3,h4,h5,h6,dl,dt,dd,td,th,div,span,p,ol,ul,li,footer,header
+	{
+		font-size:99%;
+		font-family: Microsoft JhengHei;
+	}
+	
+	img,input,textarea,select
+	{
+		max-width:100%;
+		min-width:10%;
+		height:auto;
+	}
+	
+	#page_head
+	{
+		width:100%;
+		border-bottom:1px solid #333;
+		color:#fff;
+		background:#000;
+		overflow:hidden;
+		z-index:2;
+	}
+	
+	footer
+	{
+		border-top:1px solid #333;
+		padding:10px;
+		text-align:center;
+		color:#999;
+		font-size:13px;
+	}
+	
+	nav
+	{
+		font-size:24px;
+		font-weight:bold;
+		padding:10px;
+	}
+	
+	/*以下是說明css選擇 HTML標籤物件 的方式 */
+	
+	/*像這樣子可以直接選擇 HTML標籤物件 下樣式*/ 
+	dt
+	{
+		color:#ff0;
+	}
+	
+	/*像這樣子可以直接標記多個 HTML標籤物件 來設定樣式*/
+	dd, th, td
+	{
+		color:#fff;
+	}
+	
+	/* 變更連結滑鼠動作*/
+	a, a:visited
+	{
+		color:#fff;
+	}
+	
+	a:hover
+	{
+		color:#f00;
+	}
+	
+	a:active
+	{
+		color:#f00;
+	}
+
+	
+	/* LAYOUT - 平行區域設定群組 */
+	.body, .list{overflow: hidden;display:table;width:100%;}
+	.body-row, .list code{display:table-row;}
+	.search_mune_box, .data_list_box, .data_box, .html_show, .html_code, .mark
+	{
+		display:table-cell; 
+		margin:0; 
+		padding:0;
+	}
+
+	/* 導覽選單 */
+	.search_mune_box, .data_list_box{width:250px; border-right:1px solid #333;vertical-align:top;_position: relative;_overflow: hidden;}
+	.search_mune_box>ul, .data_list_box>ul{padding:0; margin:0;}
+	.mune{_position:absolute;_z-index:1;}
+	.mune > li{color:#fff; font-size:13px; _min-width:200px; _max-width:250px; list-style:none; padding: 10px; overflow:hidden; border-bottom:1px solid #333; text-overflow: ellipsis; white-space: nowrap;cursor:pointer;}
+	.search_mune_box> .mune > li:hover,.search_mune_box> .mune > .hover{background:#222;}
+	.search_mune_box> .mune > li{max-height:18px;}
+	.data_list_box > .mune > li{min-height:15px; max-height:60px;}
+	.data_list_box> .mune > li:hover,.data_list_box> .mune > .hover{background:#444;}
+	
+	
+	/* 麵包屑導覽 */
+	.breadcrumb
+	{
+		margin:0;
+		font-size:12px;
+		color:#fff;
+		border-bottom:1px solid #333;
+		min-height:35px;
+		width:100%;
+		background:#000;
+		top:0;
+	}
+	
+	.breadcrumb>ul
+	{
+		padding:10px;
+		margin:0;
+	}
+	
+	.breadcrumb>ul>li
+	{
+		display:inline-block;
+		cursor:pointer;
+	}
+	
+	.breadcrumb>ul>.hover
+	{
+		cursor:default;
+	}
+	
+	.breadcrumb>ul>li:hover, .breadcrumb>ul>.hover
+	{
+		color:#f40;
+	}
+	
+	.breadcrumb>ul>li:after
+	{
+		content: " > ";
+	}
+	
+	.breadcrumb>ul>li:last-child:after
+	{
+		content: "";
+	}
+	
+	/* 資料顯示區域 ---------------------------------------------------------------------------------------------------------------------- */
+	.list{margin:0;padding:0;}
+	.mark{padding:20px 20px 20px 10px;}
+	.html_show, .html_code{width:50%;padding:30px 20px 20px 20px;position:relative;border-bottom:1px solid #333;border-top:1px solid #333;}
+	.html_code, .meg{color:#fff;font-size:13px;line-height:20px;border-bottom:1px solid #333;border-top:1px solid #333;}
+	.html_code{}
+	.html_show{border-left:1px solid #333;}
+	.meg{padding:30px 30px 30px 20px;margin:0;}
+	.meg h3, .meg h4{color:#d00;}
+	.meg h2{color:#f60;}
+	.meg ul{margin-left:-20px;}
+	
+	.html_show{color:#0f0;}
+	.meg_mark{color:#0ee;}
+	.meg_indent{color:#080;}
+	.meg_note{color:#d60;}
+	
+	/*模版用*/
+	#template{display:none;}
+	._code, ._show{display:block;font-size:10px;color:#999;text-align:center;border:1px solid #333;padding:2px;width:45px;line-height:14px;}
+	._code{color:#699;}
+	._show{color:#993;}
+	
+	
+		
+	#table_1
+	{
+		border:1px #f00 solid;
+		border-collapse:separate;
+		border-spacing:2px;
+		_background:#f00;
+	}
+	
+	#table_1 th,#table_1 td
+	{
+		border:1px #f00 solid;
+		padding:2px;
+		_background:#000;
+	}

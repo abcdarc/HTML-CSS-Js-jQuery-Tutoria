@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+	
+	<meta charset="utf-8">
+	
+	<title>HTML基本概念</title>
+	
+	<link href="css/style.css" rel="stylesheet" />
+	<script src="js/jquery-1.11.3.min.js"></script>
+	<script src="js/default.js"></script>
+	
+</head>
+
+<!-- 
+	*** 優化程式碼 - 便於接續維護 ---------------------------------------------------
+	
+	1. 每個主要區間都留空 
+	
+	2. 不同層級用tab向內縮排
+	
+	3. 依照層級給予id或class做為標記 : 
+		a. 標記名稱要完整-不重覆
+		b. id有唯一性限制-不能重覆 - 應用層級較 class 高
+		c. class可以有允許多個共用
+		d. 統一標記的命名方式
+		
+	4. 善用註解
+	
+	5. 標籤使用規則 : 
+		a. 開始<標籤類別代碼>結束</標籤類別代碼> 如下 :
+		<h1></h1>
+		b. 單一使用結束<標籤類別代碼 /> 如下
+		<input type="" name="" />
+	
+	***	-----------------------------------------------------------------------------
+-->
+
+
+
+<!-- body - (有預設內距 margin 5px ) -->
+<body>
+
+	<!-- 物件模版 -->
+	<div id='template'>
+		<div class='_code'>HTML碼</div>
+		<div class='_show'>執行結果</div>
+	</div>
+	
+	<!-- HTML5 - 最上方區域 -->
+	<header id='page_head'>
+		<!-- HTML5 - 導航連結 -->
+		<nav>
+			<span id='page_title'>HTML基本概念</span>
+			<!--a href="#">連結1</a>
+			<a href="#">連結2</a>
+			<a href="javascript:void(0)">連結3</a-->
+		</nav>
+	</header>
+
+	<div class="body">
+	<div class="body-row">
+	
+	<div class='search_mune_box' style='display:none;'>
+		<ul class='mune'>
+			<li>A</li>
+			<li>B</li>
+		</ul>
+	</div>
+	
+	<div class='data_list_box' style='display:none;'>
+		<ul class='mune'>
+			<li>A</li>
+			<li>B</li>
+		</ul>
+	</div>
+	
+	<div class='data_box'>
+	
+	<!--  -->
+	<dl class='list'>
+		<dt class='mark'>
+			<span class='list_title'>[概念] HTML標記規則及概念</span>
+		</dt>
+		<code>
+			<dd class='meg'>
+			    在HTML裡的任何標記，都要[代碼]開始[/代碼結束]，這部份是和XML（資料傳輸格式語言）相同的，HTML的用途最主要是用來呈現也就是(VIEW)的部份，而XML的用途用來傳遞資料。
+
+				[h4]HTML標籤架構：[/h4]
+				[ol]
+					[li]假設標籤結構如右 : <div class="class" id="id"></div>[/li]
+					[li]div為 <[ 標籤代碼 / Tag code ]>[/li]
+					[li]class和id為 <[ 標籤屬性 / Attributes ]>[/li]
+				[/ol]
+
+				[h4]以下為有效的HTML代碼：[/h4]
+				[ol]
+					[li]<div></div>[/li]
+					[li]<span></span>[/li]
+					[li]<br /> 直接結束標記[/li]
+					[li]<br> 這樣也有效，但最好不要這樣做[/li]
+				[/ol]
+
+				[h4]任何HTML標記代表了它應該有的功能：通常也有各自專用的Tag[/h4]
+				[ol]
+					[li]<a href="#">a是一個連結 : href是a這個標記用來設定連結目標的專用Tag</a>[/li]
+					[li]<img src="a.jpg" title="這是一張圖片" alt="這是一張圖片"/> img是一個圖片標籤 : src是img用來設定圖片位址的專用Tag，title是一個共用標記，通當用來提示圖片主題，alt是一個共用標記，會用在圖片無法正確顯示時，時顯示取代圖片顯示。[/li]
+					[li]<b>b是把文字變粗體</b>[/li]
+					[li]<h1>h1-6是標題 ，重要性從1~6</h1>[/li]
+				[/ol]
+
+				[p class="meg_mark"]當然HTML也有共同的標記屬性像右例bg-color,class,id，<div bg-color="#ffffff" class='class' id='id'>AAA</div>[/p]
+			</dd>
+		</code>
+	</dl>
+	
+	<!-- HTML檔案基本結構 -->
+	<dl class='list'>
+		<dt class='mark'>
+			<span class='list_title'>[概念] HTML檔案的基本結構</span>
+		</dt>
+		<code>
+			<dd class='meg' indent='true'>
+				[[!DOCTYPE html]]
+				[[html]]
+
+				[[head]]
+					<title>[span class="meg_mark"]這裡輸入你的頁面標題[/span]</title>
+					
+					<script src="[span class='meg_mark']這裡可以直接連結外部JS[/span]"></script>
+					<link href="[span class='meg_mark']這裡可以直接連結外部CSS檔[/span]" rel="stylesheet" />
+							 
+					<style>[span class="meg_mark"]裡面可以直接使用CSS[/span]</style>
+					<script>[span class="meg_mark"]裡面可以直接使用JS[/span]</script>
+				[[/head]]
+
+				[[body]]
+					[span class="meg_mark"]
+					在body區域中，為要顯示資料的主要部份。你可以隨意的輸入你要的ＨＴＭＬ標記
+					<h1>這是一個Ｈ標記他的功能是做為標題</h1>
+					<p>這是Ｐ段落</p>
+					[/span]
+				[[/body]]
+
+				[[/html]]
+			</dd>
+		</code>
+	</dl>
+	
+	<!-- HTML / CSS / JavaScript 應用關係說明 -->
+	<dl class='list'>
+		<dt class='mark'>
+			<span class='list_title'>[概念] HTML / CSS / JavaScript 應用關係說明</span>
+		</dt>
+		<code>
+			<dd class='meg' recode='code_to_html'>
+			
+				[h2]CSS與HTML[/h2]
+				
+				[p]
+					[h4]A. CSS是什麼?[/h4]
+					[ul]
+						CSS是一種基於HTML的［樣式語言］，用來設定HTML樣式，包括了瀏覽器(文字/區域(div-table等的，以下簡稱HTML元素)/視窗/捲軸)、字型、大小、邊框、顏色、背景、排版、間隔、滑鼠樣式、樣式動態(CSS3)、視窗大小判別等，支援所有HTML的元素樣式設定。
+					[/ul]
+				[/p]
+				
+				[p]
+					[h4]B. CSS學習順序由深至淺[/h4]
+					[ol]
+						[b class='meg_note']為什麼由深至淺學習?[/b]
+						
+						[li]安裝與語法宣告方式[/li]
+						[li]HTML元素的選取[/li]
+						[li]HTML區域規劃[/li]
+						[li]HTML內容排版[/li]
+						[li]HTML元素的大小顏色控制[/li]
+					[/ol]
+				[/p]
+				
+				[p]
+					[h4]C. CSS代碼應該放在那裡?[/h4]
+					[ol]
+						[li]直接在HTML的<head></head>標籤裡建立style標籤，<style>在這裡面輸入CSS程式碼</style>[/li]
+						[li]
+						或者直接把CSS代碼存成default.css檔案後在HTML的<head></head>標籤裡，以下列方式連結外部CSS<link href="檔案存放路徑/default.css" rel="stylesheet" />
+						[/li]
+					[/ol]
+				[/p]
+				
+				[p]
+					[h4]D. 如何使用CSS選取HTML標籤?[/h4]
+					[ul]
+					CSS與HTML之間的關聯是透過HTML的標籤代碼[例如:H1,A,P...等等]、class、ID，通稱(選擇器)來指定樣式效果。[br/]假設我們要設定這段程式碼的樣式 : <div class='class_test' id='id_test'> DIV區域 </div> 我們可以使用以下的方式設定，把字型顏色設成紅色。[br/][br/]
+					[/ul]
+					
+					
+					[ol]
+						[!-- &lt;&gt; --][b class='meg_note']以下是CSS為常用選取html標籤的方式[/b]
+						[li]
+							使用ID設定方式 [span class='meg_mark']#id_test{ color:#f00; }[/span]。
+						[/li]
+						[li]
+							使用CLASS設定方式 [span class='meg_mark'].class_test{ color:#f00; }[/span]。
+						[/li]
+						[li]
+							使用HTML Tag設定方式 [span class='meg_mark']div{ color:#f00; }[/span] 。
+						[/li]
+						[li]
+							所有子階層[span class='meg_mark'].box .class_test{ color:#f00; }[/span]
+							，此段表示設定.box裡的所有.class_test CLASS。
+						[/li]
+						[li]
+							指定階層[span class='meg_mark'].box ]] .class_test{ color:#f00; }[/span]
+							，此段表示只有設定.box裡的.class_test CLASS, 但是如果class_test裡再有class_test則不被影響。
+						[/li]
+						[li]
+							相鄰物件[span class='meg_mark'].box+.class_test{ color:#f00; }[/span]
+							，此段表示設定前面有.box的.class_test CLASS。
+						[/li]
+						[li]
+							指定物件之後[span class='meg_mark'].box~.class_test{ color:#f00; }[/span]
+							，此段表示設定出現.box後的所有.class_test CLASS。
+						[/li]
+						[li]
+							標籤屬性設定方式 屬性等於 : 
+							[span class='meg_mark']a<[class="box"]>{ color:#f00; }[/span]
+							，此段表示設定a標籤且class值(等於box)的物件。
+						[/li]
+						[li]
+							標籤屬性設定方式 屬性有值等於 : 
+							[span class='meg_mark']a<[class~="box"]>{ color:#f00; }[/span]
+							，此段表示設定a標籤且class值裡(有值)box的物件。
+						[/li]
+						[li]
+							標籤屬性設定方式 屬性值的字串開頭 : 
+							[span class='meg_mark']a<[class^="box"]>{ color:#f00; }[/span]
+							，此段表示設定a標籤且class值裡(值的開頭字串是box)的物件。
+						[/li]
+						[li]
+							標籤屬性設定方式 屬性值的字串結束 : 
+							[span class='meg_mark']a<[class$="box"]>{ color:#f00; }[/span]
+							，此段表示設定a標籤且class值裡(值的結尾字串是box)的物件。
+						[/li]
+						[li]
+							標籤屬性設定方式 屬性值的字串有包括該字串 : 
+							[span class='meg_mark']a<[class*="box"]>{ color:#f00; }[/span]
+							，此段表示設定a標籤且class值裡(值的字串有包括box)的物件。
+						[/li]
+						[li]
+							標籤屬性設定方式 屬性值的字串開頭 : 
+							[span class='meg_mark']a<[class|="box"]>{ color:#f00; }[/span]
+							，此段表示設定a標籤且class值裡(值的字串有包括box)的物件。
+						[/li]
+						[li]
+							特定節點設定方式 取第一個物件 : 
+							[span class='meg_mark'].box .list:first-child{ color:#f00;}[/span]
+							，此段表示捉.box裡的第一個.list物件
+						[/li]
+						[li]
+							特定節點設定方式 取最後一個物件 : 
+							[span class='meg_mark'].box .list:last-child{ color:#f00;}[/span]
+							，此段表示捉.box裡的最後一個.list物件
+						[/li]
+						[li]
+							特定節點設定方式 如果只有一個物件 : 
+							[span class='meg_mark'].box .list:only-child{ color:#f00;}[/span]
+							，此段表示.box裡只有一個.list物件設定才有效
+						[/li]
+						[li]
+							特定節點設定方式 指定物件 : 
+							[span class='meg_mark'].box .list:nth-child(2){ color:#f00;}[/span]
+							，此段表示捉.box裡第二個.list物件
+						[/li]
+						[li]
+							特定節點設定方式 向前指定物件 : 
+							[span class='meg_mark'].box .list:nth-child(2){ color:#f00;}[/span]
+							，此段表示捉.box裡前算過來第二個.list物件
+						[/li]
+						[li]
+							特定節點設定方式 向前指定物件 : 
+							[span class='meg_mark'].box .list:nth-last-child(2){ color:#f00;}[/span]
+							，此段表示捉.box裡向後算過來第二個.list物件
+						[/li]
+						[li]
+							特定節點設定方式 向前指定物件 : 
+							[span class='meg_mark'].box .list:nth-last-child(2){ color:#f00;}[/span]
+							，此段表示捉.box裡向後算過來第二個.list物件
+						[/li]
+						[li]
+							狀態選取 未做用之前 : 
+							[span class='meg_mark']a:link{ color:#f00;}[/span]
+							，此段設定連結未被點取前的狀態
+						[/li]
+						[li]
+							狀態選取 已做用過 : 
+							[span class='meg_mark']a:visited{ color:#f00;}[/span]
+							，此段設定連結曾被點取後的狀態
+						[/li]
+						[li]
+							狀態選取 做用中 : 
+							[span class='meg_mark']a:active{ color:#f00;}[/span]
+							，此段設定連結作用中的狀態
+						[/li]
+						[li]
+							狀態選取 滑鼠停在物件上面時 : 
+							[span class='meg_mark']a:hover{ color:#f00;}[/span]
+							，此段設定連結或物件滑鼠停在物件上面時的狀態
+						[/li]
+						[li]
+							狀態選取 物件被選取時 : 
+							[span class='meg_mark']a:focus{ color:#f00;}[/span]
+							，此段設定表單被選取時的狀態
+						[/li]
+					[/ol]
+				[/p]
+				
+				[p]
+					[h4]E. CSS選擇器層級注意事項!![/h4]
+					
+					[ol]
+						[li]
+							在撰寫CSS程式時要注意層級 ID ]] CLASS ]] Tag
+							[div]
+								[p]
+								[span class='meg_note']範例 : [br/][/span]
+									<style>[br/]
+									[span class='meg_mark']
+									　　#test{color:#f60;} [span class="meg_indent"]/*因為ID的層級較高，雖然先宣告了，但最後結果會是[span style='color:#f60;']#f60[/span]*/[/span][br/]
+									　　div{color:#f00;}[br/]
+									　　.test{color:#f20;}[br/]
+									[/span]
+									</style>[br/]
+									
+									<div class='test' id='test'>[br/]
+									　　[span style='color:#f60;']這是測式[/span][br/]
+									</div>[br/]
+								[/p]
+							[/div]
+						[/li]
+						
+						[li]
+						如果同一層級的話就是依照順序 後 ]] 前
+							[div]
+								[p]
+								[span class='meg_note']範例 : [br/][/span]
+									<style>[br/]
+									[span class='meg_mark']
+									　　div{color:#f00;}[br/]
+									　　div{color:#f20;} [span class="meg_indent"]/*同樣是div，後面宣告結果覆蓋後，最後結果會是[span style='color:#f20;']#f20[/span]*/[/span][br/]
+									[/span]
+									</style>[br/]
+									<div class='test' id='test'>[br/]
+									　　[span style='color:#f20;']這是測式[/span][br/]
+									</div>[br/]
+								[/p]
+							[/div]
+						[/li]
+					[/ol]
+				[/p]
+				
+				[h2]JavaScript與HTML[/h2]
+				
+				[p]
+					[h4]A. JavaScript是什麼?[/h4]
+					[ol]
+						[li]
+							[div]JavaScript(也叫ECMAScript)是一種直譯式語言，運行在client端，所以只要瀏覽過的網站有使用JS檔，都一定會下載到本機電腦的暫存區。[/div][div]不過目前也已經有出現在伺服器端可使用的JS（例如 : Node.js）。[/div]
+						[/li]
+						[li]
+							JS主要的功能是在於提供HTML互動服務。提供瀏覽器事件監控、讀寫HTML標籤及屬性、標籤或表單物件事件監控、各形態資料處理及驗證、與網路伺服器互動傳遞資料、cookie控制等。
+						[/li]
+					[/ol]
+				[/p]
+				
+				[p]
+					[h4]B. JS代碼應該放在那裡?[/h4]
+					[ol]
+						[li]直接在HTML的<head></head>標籤裡建立script標籤，<script>在這裡面輸入JS程式碼</script>[/li]
+						[li]
+						或者直接把script代碼存成script.js檔案後在HTML的<head></head>標籤裡，以下列方式連結外部JS<script src="檔案存放路徑/script.js"></script>
+						[/li]
+					[/ol]
+				[/p]
+				
+				[p]
+					[h4]C. 使用JS library(jQuery)[/h4]
+					[ol]
+						[li]
+						安裝：到[a href='https://jquery.com/']官網[/a]下載jquery.js後，再連結即可。<script src="檔案存放路徑/jquery.js"></script>
+						[/li]
+						[li]
+						為什麼使用jQuery?jQuery可以將原本複雜的JS程式，用簡短的方式呈現，寫的少做的多，並俱備了高效率的優勢。在選擇器上也沿用了CSS選擇器的方式，非常平易近人呀。不過在使用jQuery前還是需先俱備JavaScript基本概念。
+						[div]
+							[span class='meg_note']範例 : [br/][/span]
+							<script>[br/]
+							[span class="meg_mark"]
+							　　[span class="meg_indent"]// 以html方式取得標籤內容[/span][br/]
+							　　var message_html = $('.test_class').html();[br/]
+							　　console.log(message_html);[span class="meg_indent"] // 網頁記錄顯示 : TEST<br>[/span][br/][br/]
+							　　[span class="meg_indent"]// 以純文字方式取得標籤內容[/span][br/]
+							　　var message_text = $('.test_class').text();[br/]
+							　　console.log(message_text);[span class="meg_indent"] // 網頁記錄顯示 : TEST[/span][br/]
+							[/span]
+							</script>[br/][br/]
+							
+							<div class='test_class' id='test_id'>[br/]
+							[span class="meg_mark"]
+							　　TEST<br />[br/]
+							[/span]
+							</div>[br/]
+						[/div]
+						[/li]
+					[/ol]
+				[/p]
+				
+				
+			</dd>
+		</code>
+	</dl>
+	
+	<!-- 標題 -->
+	<dl class='list'>
+		<dt class='mark'>
+			<span class='list_title'>[範例] H1-6 / 標題</span>
+				- 會斷行(block)
+				- 有預設外距(margin)
+				- 有預設字型大小(font-size)
+		</dt>
+		<code>
+			<dd class='html_code'>
+			</dd>
+			<dd class='html_show'>
+				只要是標題盡量使用H1-6
+				<h1>標題 H1</h1>
+				<h2>標題 H2</h2>
+				<h3>標題 H3</h3>
+				<h4>標題 H4</h4>
+				<h5>標題 H5</h5>
+				<h6>標題 H6</h6>
+				
+				<h7>標題 H7--沒有H7所以沒有作用</h7>
+			</dd>
+		</code>
+	</dl>
+	
+	<!-- 段落 -->
+	<dl class='list'>
+		<dt class='mark'>
+			<span class='list_title'>[範例] P / 段落</span> 
+				- 會斷行(block)
+				- 有預設外距(margin)
+		</dt>
+		<code>
+			<dd class='html_code'>
+			</dd>
+			<dd class='html_show'>
+				<p style='background:#00f;'>P段落 - 有預設外距(margin : top-bottom-各10px )</p>
+				<p style='margin:0px;padding:0px;background:#f00;display:block;'>
+					P段落 - 取消外距(0px - margin)
+				</p>
+				<div style='background:#333;'>和DIV比較 p也只是多了外距的預設值</div>
+			</dd>
+		</code>
+	</dl>
+	
+	<!-- 斷行區塊 -->
+	<dl class='list'>
+		<dt class='mark'>
+			<span class='list_title'>[範例] DIV / 區塊 </span>
+				- 會斷行(block)
+				- 沒有任何預設值
+		</dt>
+		<code>
+			<dd class='html_code'>
+			</dd>
+			<dd class='html_show'>
+				被<div>DIV</div>斷行
+			</dd>
+		</code>
+	</dl>
+	
+	<!-- 不斷行區塊 -->
+	<dl class='list'>
+		<dt class='mark'>
+			<span class='list_title'>[範例] SPAN / 區塊</span> 
+				- 不會斷行(inline)
+				- 沒有任何預設值
+		</dt>
+		<code>
+			<dd class='html_code'>
+			</dd>
+			<dd class='html_show'>
+				在同一行<span>span</span>在同一行
+			</dd>
+		</code>
+	</dl>
+	
+	<!-- 項目清單 -->
+	<dl class='list'>
+		<dt class='mark'>
+			<span class='list_title'>[範例] LI / 項目清單 </span>
+				- 會斷行(block)
+				- 有預設清單樣式(list-style)
+		</dt>
+		<code>
+			<dd class='html_code'>
+			</dd>
+			<dd class='html_show'>
+				<li>LI_A</li>
+				<li>LI_B</li>
+				<li>LI_C</li>
+			</dd>
+		</code>
+	</dl>
+	
+	<!-- 項目縮排 -->
+	<dl class='list'>
+		<dt class='mark'>
+			<span class='list_title'>[範例] UL / 項目縮排</span>
+				- 會斷行(block)
+				- 有預設內距(padding)
+		</dt>
+		<code>
+			<dd class='html_code'>
+			</dd>
+			<dd class='html_show'>
+				<ul>
+					<li>UL_LI_A</li>
+					<li>UL_LI_B</li>
+					<li>UL_LI_C</li>
+				</ul>
+			</dd>
+		</code>
+	</dl>
+	
+	<!-- 數字縮排 -->
+	<dl class='list'>
+		<dt class='mark'>
+			<span class='list_title'>[範例] OL / 數字縮排</span>
+				- 會斷行(block)
+				- 有預設內距(padding)
+				- 會變更Li的清單樣式(list-style)
+		</dt>
+		<code>
+			<dd class='html_code'>
+			</dd>
+			<dd class='html_show'>
+				<ol>
+					<li>OL_LI_A</li>
+					<li>OL_LI_B</li>
+					<li>OL_LI_C</li>
+				</ol>
+			</dd>
+		</code>
+	</dl>
+	
+	<!-- 項目 -->
+	<dl class='list'>
+		<dt class='mark'>
+			<span class='list_title'>[範例] DL / 項目</span>
+				- 會斷行(block)
+				- 有預設內距(padding)
+		</dt>
+		<code>
+			<dd class='html_code'>
+			</dd>
+			<dd class='html_show'>
+				<dl>
+					<dt>項目1</dt>
+					<dd>項目1內容</dd>
+					<dt>項目2</dt>
+					<dd>項目2內容</dd>
+				</dl>
+			</dd>
+		<code>
+		
+	</dl>
+	
+	<!-- 分隔線 -->
+	<dl class='list'>
+		<dt class='mark'>
+			<span class='list_title'>[範例] HR / 分隔線 </span>
+				- 會斷行
+		</dt>
+		<code>
+			<dd class='html_code'>
+			</dd>
+			<dd class='html_show'>
+				分隔線前面<hr />分隔線後面
+			</dd>
+		</code>
+	</dl>
+	
+	<!-- 連結 -->
+	<dl class='list'>
+		<dt class='mark'>
+			<span class='list_title'>[範例] A / 連結</span>
+				- 不會斷行(inline)
+				- 有預設字型顏色(color)
+				- 有預設文字底線樣式(text-decoration)
+		</dt>
+		<code>
+			<dd class='html_code'>
+			</dd>
+			<dd class='html_show'>
+				<a href="http://google.com">指定連結 - 沒指定目標視窗 google</a>
+				<br/>
+				<a href="http://google.com" target='_blank'>指定連結 - 另開視窗 google</a>
+			</dd>
+		</code>
+	</dl>
+	
+	<!-- 斷行 -->
+	<dl class='list'>
+		<dt class='mark'>
+			<span class='list_title'>[範例] BR / 斷行</span>
+		</dt>
+		<code>
+			<dd class='html_code'>
+			</dd>
+			<dd class='html_show'>
+				文字<br />BR斷行後
+			</dd>
+		</code>
+	</dl>
+	
+	<!-- 圖片 -->
+	<dl class='list'>
+		<dt class='mark'>
+			<span class='list_title'>[範例] IMG / 圖片</span>
+				- 有預設外框
+				- width和height預設為auto
+		</dt>
+		<code>
+			<dd class='html_code'>
+			</dd>
+			<dd class='html_show'>
+				<img 
+					src="5bf310512782f222de241a1964371ead5cc3b0a8_m.jpg" 
+					title='title的值用來提示' 
+					alt='alt的值是當圖片連結錯誤或失敗時顯示的文字'
+				/>
+				<br />
+				<img src="沒這張圖片" title='title的值用來提示' alt='alt的值是當圖片連結錯誤或失敗時顯示的文字' />
+			</dd>
+		</code>
+	</dl>
+	
+	<!-- 完整的table層級結構 - 這些都是基本要知道的 -->
+	<dl class='list'>
+		<dt class='mark'>
+			<span class='list_title'>[範例] TABLE / 表格基本架構</span>
+				- td和th都有預設內距(padding : 2px) : table 屬性 cellpadding = 2
+				- table,td和th都有預設邊框(border : 1px) : table 屬性 border=1
+				- table有預設影響(td,tj)外距(border-collapse:separate;border-spacing: 2px) : table 屬性 cellspacing=2
+		</dt>
+		<code>
+			<dd class='html_code'>
+			</dd>
+			<dd class='html_show'>
+				<table id='table_1' width="100%">
+					<tbody>
+						<tr><td>tbody永遠就是在中間 如果沒有任何設定(tbody,thead,tfoot)任一值都算在tbody裡</td></tr>
+					</tbody>
+					<tfoot>
+						<tr><td>在tfoot裡不管在那裡都會在最下面</td></tr>
+					</tfoot>
+					<thead>
+						<tr><th>在thead裡不管在那裡都會在最上面 (用th字體會加粗置中)</th></tr>
+					</thead>
+				</table>
+			
+			</dd>
+		</code>
+	</dl>
+	
+	<!-- 完整的table層級結構 - 這些都是基本要知道的 -->
+	<dl class='list'>
+		<dt class='mark'>
+			<span class='list_title'>[範例] TABLE / 合併表格</span>
+		</dt>
+		<code>
+			<dd class='html_code'>
+			</dd>
+			<dd class='html_show'>
+				<table id='table_1' width="100%">
+						<tr><th>NAME</th><th>EMAIL</th><th>TEL</th></tr>
+						<tr><td rowspan='3'>垂直合併表格</td><td>EMAIL</td><td>TEL</td></tr>
+						<tr><td>EMAIL</td><td>TEL</td></tr>
+						<tr><td>EMAIL</td><td>TEL</td></tr>
+						<tr><td colspan='3'>水平合併表格</td></tr>
+						<tr><td colspan='2'>少合併一格</td></tr>
+						<tr><td colspan='2'>合併二格</td><td colspan='1'>合併一格</td></tr>
+				</table>
+			
+			</dd>
+		</code>
+	</dl>
+	
+	<!-- 
+	表單 
+		action : 傳送頁面(url) , 留空時為目前頁面
+		method : 資料傳遞方式 get / post
+	-->
+	<dl class='list'>
+		<dt class='mark'>
+			<span class='list_title'>[範例] FROM / HTML表單基本架構</span>
+				- action : 資料傳送頁面，為空時代表傳送到本頁
+				- method傳送資料方式有get和post二種
+				- enctype傳送資料格式
+				- 每個表單物件都必需輸入識別名稱(name值)
+				- 需要設定submit按鈕才能送出表單，不然就得使用JS輔助
+		</dt>
+		<code>
+			<dd class='html_code'>
+			</dd>
+			<dd class='html_show'>
+			<form action="" method="get" enctype="application/x-www-form-urlencoded">
+				單行文字方塊 <input type="text" name="" value="單行文字" />
+				<input type="submit" value="送出表單" />
+			</form>
+			</dd>
+		</code>
+	</dl>
+	
+	<!-- 
+	表單 
+		action : 傳送頁面(url) , 留空時為目前頁面
+		method : 資料傳遞方式 get / post
+	-->
+	<dl class='list'>
+		<dt class='mark'>
+			<span class='list_title'>[範例] FROM / 表單</span>
+		</dt>
+		<code>
+			<dd class='html_code'>
+			</dd>
+			<dd class='html_show'>
+			<form action="" method="get" enctype="application/x-www-form-urlencoded">
+			
+				<!-- 標籤 用for對應id : 點擊label 可以選定指定表單物件 -->
+				<div>
+					input - text / label用途
+					<label for='name'>姓名</label>
+					<input type="text" name="name" id="name" value="點'姓名'看效果" />
+				</div>
+				
+				<dl style='background:#f60;'>
+					<dt>共用屬性類說明</dt>
+					<ul> 
+						<li>disabled : 禁用</li>
+						<li>readonly : 只供讀取</li>
+					</ul>
+				</dl>
+				
+				<!-- 文字類 -->
+				<div>input - text / 單行文字 <input type="text" name="" value="單行文字" /></div>
+				<div>input - text - disabled / 不可讀寫 <input type="text" name="" value="單行文字" disabled /></div>
+				<div>input - text - readonly / 只可讀不可寫 <input type="text" name="" readonly value="單行文字" /></div>
+				<div>textarea / 多行文字 <textarea cols="50" rows="5" name="" >多行文字</textarea></div>
+				<div>input - hidden / 隱藏欄位 -><input type="hidden" name="" value="隱藏欄位" /></div>
+				<br/>
+				
+				<!-- 按鈕類 -->
+				<div>input - checkbox / 多選 <input type="checkbox" name="" value="多選" /></div>
+				<div>input - radio / 單選 <input type="radio" name="" value="單選" /></div>
+				<div>
+				select 單選 <select name="">
+					<option value="">請選擇</option>
+					<option value="1">值一</option>
+					<option value="2">值二</option>
+				</select>
+				</div>
+				<div>
+				select - multiple / 多選 <select multiple name="">
+					<option value="">請選擇</option>
+					<option value="1">值一</option>
+					<option value="2">值二</option>
+				</select>
+				</div>
+				<br/>
+				
+				<!-- 檔案類 -->
+				<div>input - file / 檔案 <input type="file" name="" value="選擇檔案" /></div>
+				<br/>
+				
+				<!-- 按鈕類 -->
+				<div>input - image / 圖片按鈕(submit) <input type="image" src="" name="" value="用圖片當按鈕" /></div>
+				<div>input - reset / 重設表單 <input type="reset" name="" value="重設表單" /><br />
+				<div>input - button / 純按鈕 <input type="button" name="" value="純按鈕" /><br />
+				<div>button / 純按鈕(裡面可以塞代碼) <button><span style='color:#f00;'>純</span><span>按鈕</span></button></div>
+				<div>submit / 送出表單 <input type="submit" value="送出表單按鈕" /></div>
+				
+				
+			</form>
+			</dd>
+		</code>
+	</dl>
+	
+	</div><!-- .data_box -->
+	
+	
+	</div><!-- #body-row -->
+	</div><!-- #body -->
+	
+	
+	<!-- HTML5 - 最下方區域 -->
+	<footer style='background:#f00;clear:both;'>
+		&copy; arc 2015
+	</footer>
+	
+</body>
+
+</html>
